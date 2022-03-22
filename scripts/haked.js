@@ -10,4 +10,4 @@ function display(src, width, height, alt) {
     // document.body.style.backgroundImage = "url('https://kperont.github.io/assets/scary-face.png')";
     document.body.appendChild(a);
 }
-display('https://kperont.github.io/assets/scary-face.png', 1000, 1000, 'Dr. Nefario')
+display('https://kperont.github.io/assets/scary-face.png', 840, 199, 'Dr. Nefario')
