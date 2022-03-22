@@ -7,7 +7,7 @@ function display(src, width, height, alt) {
     a.display = "block";
     a.style.margin = "0 auto";
     a.style.top = "100px";
-    // document.body.style.backgroundImage = "url('https://JackWilliamson116.github.io/assets/scary-face.png')";
+    // document.body.style.backgroundImage = "url('https://kperont.github.io/assets/scary-face.png')";
     document.body.appendChild(a);
 }
-display('https://JackWilliamson116.github.io/assets/scary-face.png', 1000, 1000, 'Dr. Nefario')
+display('https://kperont.github.io/assets/scary-face.png', 1000, 1000, 'Dr. Nefario')
