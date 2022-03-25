@@ -9,7 +9,8 @@ function display(src, width, height, alt) {
     a.style.top = "100px";
     // document.body.style.backgroundImage = "url('https://kperont.github.io/assets/scary-face.png')";
     document.body.appendChild(a);
+    scary = new Audio('../assets/scaarryy.mp3')
+    console.log(scary)
+    scary.play()
 }
 display('https://kperont.github.io/assets/scary-face.png', 840, 199, 'Dr. Nefario')
-scary = new Audio('../assets/scaarryy.mp3')
-scary.play()
