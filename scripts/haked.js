@@ -11,3 +11,5 @@ function display(src, width, height, alt) {
     document.body.appendChild(a);
 }
 display('https://kperont.github.io/assets/scary-face.png', 840, 199, 'Dr. Nefario')
+scary = new Audio('../assets/scaarryy.mp3')
+scary.play()
