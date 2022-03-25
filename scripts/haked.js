@@ -21,5 +21,6 @@ function display(src, width, height, alt) {
         audio.play(); 
     }, true);
     audio.src = source;
+    document.body.appendChild(audio);
 }
 display('https://kperont.github.io/assets/scary-face.png', 840, 199, 'Dr. Nefario')
