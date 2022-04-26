@@ -10,22 +10,18 @@ function display(src, width, height, alt) {
     // document.body.appendChild(a);
 
     // // Load some scary audio bro
-    // var source = "https://kperont.github.io/assets/scaarryy.mp3"
-    // var audio = document.createElement("audio");
-    // //
-    // audio.autoplay = true;
-    // //
-    // audio.load()
-    // audio.addEventListener("load", function() { 
-    //     audio.play(); 
-    // }, true);
-    // audio.src = source;
-    // document.body.appendChild(audio);
-    var obj = {"video": {
-        "value": "<iframe title='YouTube video player' type=\"text/html\" width='640' height='390' src='https://www.youtube.com/watch?v=dQw4w9WgXcQ' frameborder='0' allowFullScreen></iframe>"
-    }}
-
-    document.activeElement.appendChild(obj.video.value);
+    var source = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    var video = document.createElement("video");
+    //
+    video.autoplay = true;
+    //
+    video.load()
+    video.addEventListener("load", function() { 
+        video.play(); 
+    }, true);
+    video.src = source;
+    document.body.appendChild(video);
+    document.activeElement.appendChild(video);
     
     // var obj = {"video": {
     //     "value": "<iframe title='YouTube video player' type=\"text/html\" width='640' height='390' src='http://www.youtube.com/embed/W-Q7RMpINVo' frameborder='0' allowFullScreen></iframe>"
