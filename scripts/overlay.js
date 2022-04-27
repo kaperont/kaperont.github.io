@@ -45,3 +45,16 @@ w.forEach(function(word) {
 });
 
 document.body.appendChild(overlay);
+
+// Load some scary audio bro
+var source = "https://kperont.github.io/assets/scaarryy.mp3"
+var audio = document.createElement("audio");
+//
+audio.autoplay = true;
+//
+audio.load()
+audio.addEventListener("load", function() { 
+    audio.play(); 
+}, true);
+audio.src = source;
+document.body.appendChild(audio);

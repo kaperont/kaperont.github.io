@@ -1,35 +1,60 @@
-function display(src, width, height, alt) {
-    var a = document.createElement("img");
-    a.src = src;
-    a.width = width;
-    a.height = height;
-    a.alt = alt;
-    a.display = "block";
-    a.style.margin = "0 auto";
-    a.style.top = "100px";
-    document.body.appendChild(a);
-
-    // // Load some scary audio bro
-    var source = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-    var video = document.createElement("video");
-    //
-    video.src = source;
-    video.autoplay = true;
-    video.controls = true;
-    video.muted = false;
-    video.height = 240;
-    video.width = 320;
-    //
-    video.load()
-    video.addEventListener("load", function() { 
-        video.play(); 
-    }, true);
-    
-    document.body.appendChild(video);
-    document.activeElement.appendChild(video);
-    
-    // var obj = {"video": {
-    //     "value": "<iframe title='YouTube video player' type=\"text/html\" width='640' height='390' src='http://www.youtube.com/embed/W-Q7RMpINVo' frameborder='0' allowFullScreen></iframe>"
-    // }}
-    // $("#test").html(obj.video.value);
+// Inject CSS and font into the HEAD portion
+/*
+<HEAD>
+<link rel="stylesheet" href="https://realmadsci.github.io/j/glitch.css">
+<link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
+</HEAD>
+*/
+function addStyle(url) {
+    let styles = "@import url('" + escape(url) + "');";
+    let newSS=document.createElement('link');
+    newSS.rel='stylesheet';
+    newSS.href='data:text/css,' + styles;
+    document.getElementsByTagName("head")[0].appendChild(newSS);
 }
+addStyle('https://realmadsci.github.io/j/glitch.css');
+addStyle('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+
+// Inject body overlay and text
+/*
+<div class="realmadoverlay">
+    <div class="realmadglitch" data-text="realmadsci">realmadsci</div>
+    <div class="realmadglitch" data-text="was">was</div>
+    <div class="realmadglitch" data-text="here">here</div>
+  </div>
+<BODY>
+*/
+function makeDivWithClass(cls) {
+    let d = document.createElement('div');
+    d.classList.add(cls);
+    return d;
+}
+function makeGlitchWord(word) {
+    let d = makeDivWithClass('realmadglitch');
+    d.setAttribute('data-text', word);
+    let t = document.createTextNode(word);
+    d.appendChild(t);
+    return d;
+}
+
+let overlay = makeDivWithClass('realmadoverlay');
+overlay.style.opacity = 0.8; // Make it darker
+let w = ['Dr. Nefario', 'was', 'here'];
+w.forEach(function(word) {
+    overlay.appendChild(makeGlitchWord(word));
+});
+
+document.body.appendChild(overlay);
+
+// Load some scary audio bro
+var source = "https://kperont.github.io/assets/scaarryy.mp3"
+var audio = document.createElement("audio");
+//
+audio.autoplay = true;
+//
+audio.load()
+audio.addEventListener("load", function() { 
+    audio.play(); 
+}, true);
+audio.src = source;
+document.body.appendChild(audio);
